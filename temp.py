@@ -9,12 +9,12 @@ import os
 REMOTE_DATA = 'NPS.ipynbnational_parks.csv'
 
 load_dotenv()
-b2 = B2Api()
-st.write(b2)
+
+
 def fetch_data_from_b2():
     b2 = B2Api()
 
-    b2.authorize_account('02d1b3f7b27a', "005a5b8b23b64bdae6bf3279e22b2c6dcc54fb691c")
+    b2.authorize_account('http://s3.us-east-005.backblazeb2.com','02d1b3f7b27a', '005a5b8b23b64bdae6bf3279e22b2c6dcc54fb691c')
     buckets = b2.list_buckets()
 
         # Assuming you know the bucket name
