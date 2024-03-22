@@ -10,6 +10,8 @@ REMOTE_DATA = 'NPS.ipynbnational_parks.csv'
 
 load_dotenv()
 
+b2 = B2Api()
+st.write(b2)
 
 # Function to fetch data from Backblaze B2
 
