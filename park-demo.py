@@ -30,7 +30,7 @@ def get_data():
 
 
 st.title('National Parks Data')
-st.title(os.environ['B2_KEYID'])
+
     
     # Fetch data from Backblaze B2
 df_parks = get_data()
