@@ -6,7 +6,7 @@ from utils.b2 import B2
 from utils.modeling import *
 import os
 
-REMOTE_DATA = 'NPS.ipynbnational_parks.csv'
+REMOTE_DATA = '.csv'
 
 load_dotenv()
 
@@ -21,7 +21,7 @@ b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
 @st.cache_data  
 def get_data():
     # collect data frame of reviews and their sentiment
-    # b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    b2.set_bucket(os.environ['B2_BUCKETNAME'])
     df = b2.get_df(REMOTE_DATA)
     
     
