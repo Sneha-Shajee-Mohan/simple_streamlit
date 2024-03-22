@@ -11,7 +11,7 @@ from utils.modeling import *
 # ------------------------------------------------------
 #                      APP CONSTANTS
 # ------------------------------------------------------
-REMOTE_DATA = 'coffee_analysis_w_sentiment.csv'
+REMOTE_DATA = 'national-park-demo.csv'
 
 
 # ------------------------------------------------------
@@ -34,11 +34,11 @@ def get_data():
     b2.set_bucket(os.environ['B2_BUCKETNAME'])
     df_coffee = b2.get_df(REMOTE_DATA)
 
-    # average sentiment scores for the whole dataset
-    benchmarks = df_coffee[['neg', 'neu', 'pos', 'compound']] \
-                    .agg(['mean', 'median'])
+    # # average sentiment scores for the whole dataset
+    # benchmarks = df_coffee[['neg', 'neu', 'pos', 'compound']] \
+    #                 .agg(['mean', 'median'])
     
-    return df_coffee, benchmarks
+    return df_coffee
 
 
 @st.cache_resource
