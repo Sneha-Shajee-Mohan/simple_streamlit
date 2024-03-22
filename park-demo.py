@@ -22,8 +22,6 @@ def get_data():
     # collect data frame of reviews and their sentiment
     b2.set_bucket(os.environ['B2_BUCKETNAME'])
     df = b2.get_df(REMOTE_DATA)
-
-    # average sentiment scores for the whole dataset
     
     
     return df
@@ -34,11 +32,12 @@ def main():
     # Fetch data from Backblaze B2
     df_parks = get_data()
 
-    # Display the dataframe
-    st.dataframe(df_parks)
-
     # Show distribution of parks by states
     st.subheader('Distribution of Parks by States')
+    # Display the dataframe
+    st.write(df_parks)
+
+   
     state_counts = df_parks['states'].value_counts()
     st.bar_chart(state_counts)
 
