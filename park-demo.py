@@ -10,28 +10,27 @@ load_dotenv()
 
 
 # Function to fetch data from Backblaze B2
-def fetch_data_from_b2():
+
     # Initialize B2 API with your account credentials
-    b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
         key_id=os.environ['B2_KEYID'],
         secret_key=os.environ['B2_APPKEY'])
     
-    buckets = b2.list_buckets() 
-    bucket_name = "NPS.ipynbnational_parks.csv" 
-    file_names = b2.list_file_names(bucket_name)
-    for file_name in file_names:
-        if file_name.endswith(".csv"):  # Assuming your file is in CSV format
-            file_info = b2.download_file_by_name(bucket_name, file_name)
-            df = pd.read_csv(file_info.content)
-            return df
+def get_data():
+    # collect data frame of reviews and their sentiment
+    b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    df = b2.get_df()
 
+    # average sentiment scores for the whole dataset
+    
+    
     return df
 
 def main():
     st.title('National Parks Data')
     
     # Fetch data from Backblaze B2
-    df_parks = fetch_data_from_b2()
+    df_parks = get_data()
 
     # Display the dataframe
     st.write(df_parks)
