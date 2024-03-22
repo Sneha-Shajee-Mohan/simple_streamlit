@@ -9,7 +9,8 @@ import os
 REMOTE_DATA = 'NPS.ipynbnational_parks.csv'
 
 load_dotenv()
-
+b2 = B2Api()
+st.write(b2)
 def fetch_data_from_b2():
     b2 = B2Api()
 
