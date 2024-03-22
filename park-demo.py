@@ -18,6 +18,7 @@ b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
         key_id=os.environ['B2_KEYID'],
         secret_key=os.environ['B2_APPKEY'])
 
+
 @st.cache_data  
 def get_data():
     # collect data frame of reviews and their sentiment
@@ -29,6 +30,7 @@ def get_data():
 
 
 st.title('National Parks Data')
+st.title(os.environ['B2_KEYID'])
     
     # Fetch data from Backblaze B2
 df_parks = get_data()
