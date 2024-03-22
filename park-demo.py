@@ -8,8 +8,6 @@ import os
 load_dotenv()
 
 
-
-
 # Function to fetch data from Backblaze B2
 def fetch_data_from_b2():
     # Initialize B2 API with your account credentials
