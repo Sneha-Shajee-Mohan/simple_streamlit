@@ -12,9 +12,9 @@ load_dotenv()
 # Function to fetch data from Backblaze B2
 def fetch_data_from_b2():
     # Initialize B2 API with your account credentials
-    b2 = B2Api()
-    # b2.authorize_account(''005a5b8b23b64bdae6bf3279e22b2c6dcc54fb691c')
-    b2.authorize_account('005a5b8b23b64bdae6bf3279e22b2c6dcc54fb691c''02d1b3f7b27a',)
+    b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+        key_id=os.environ['B2_KEYID'],
+        secret_key=os.environ['B2_APPKEY'])
                      
     
     # b2.authorize_account(os.environ['B2_KEYID'],os.environ['B2_APPKEY'])
