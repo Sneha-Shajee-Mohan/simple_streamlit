@@ -27,20 +27,19 @@ def get_data():
     
     return df
 
-def main():
-    st.title('National Parks Data')
+
+st.title('National Parks Data')
     
     # Fetch data from Backblaze B2
-    df_parks = get_data()
+df_parks = get_data()
 
     # Show distribution of parks by states
-    st.subheader('Distribution of Parks by States')
-    # Display the dataframe
-    st.write(df_parks)
+st.subheader('Distribution of Parks by States')
+# Display the dataframe
+st.write(df_parks)
 
    
-    state_counts = df_parks['states'].value_counts()
-    st.bar_chart(state_counts)
+state_counts = df_parks['states'].value_counts()
+st.bar_chart(state_counts)
 
-if __name__ == "__main__":
-    main()
+
