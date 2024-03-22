@@ -35,7 +35,7 @@ def main():
     df_parks = get_data()
 
     # Display the dataframe
-    st.write(df_parks)
+    st.dataframe(df_parks)
 
     # Show distribution of parks by states
     st.subheader('Distribution of Parks by States')
