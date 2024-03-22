@@ -26,7 +26,7 @@ class B2(object):
                                 aws_access_key_id=key_id,
                                 aws_secret_access_key=secret_key,
                                 config=Config(signature_version='s3v4'))
-        return self.b2
+        
         
     def set_bucket(self, bucket_name):
         """
