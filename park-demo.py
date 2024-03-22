@@ -6,7 +6,7 @@ from b2sdk.v2 import B2Api
 def fetch_data_from_b2():
     # Initialize B2 API with your account credentials
     b2 = B2Api()
-    b2.authorize_account("ACCOUNT_ID", "APPLICATION_KEY")
+    b2.authorize_account("02d1b3f7b27a", "Master Application Key")
 
     # Download the CSV file from B2 bucket
     bucket = b2.get_bucket_by_name("national-park-demo")
