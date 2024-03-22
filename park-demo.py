@@ -17,7 +17,8 @@ load_dotenv()
 b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
         key_id=os.environ['B2_KEYID'],
         secret_key=os.environ['B2_APPKEY'])
-    
+
+@st.cache_data  
 def get_data():
     # collect data frame of reviews and their sentiment
     b2.set_bucket(os.environ['B2_BUCKETNAME'])
