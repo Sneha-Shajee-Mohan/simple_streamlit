@@ -6,7 +6,7 @@ from utils.b2 import B2
 from utils.modeling import *
 import os
 
-REMOTE_DATA = 'https://national-park-demo.s3.us-east-005.backblazeb2.com/NPS.ipynbnational_parks.csv'
+REMOTE_DATA = '.csv'
 
 load_dotenv()
 
