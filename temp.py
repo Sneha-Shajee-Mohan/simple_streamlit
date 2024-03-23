@@ -14,7 +14,7 @@ load_dotenv()
 def fetch_data_from_b2():
     b2 = B2Api()
 
-    b2.authorize_account('https://s3.us-east-005.backblazeb2.com','02d1b3f7b27a', '005a5b8b23b64bdae6bf3279e22b2c6dcc54fb691c')
+    b2.authorize_account('00502d1b3f7b27a0000000001', 'K005Y3TomdGj2uMCd0q8aU7wmuemNQ4')
     buckets = b2.list_buckets()
 
         # Assuming you know the bucket name
