@@ -24,12 +24,18 @@ b2.authorize_account("production",'00502d1b3f7b27a0000000001', 'K005Y3TomdGj2uMC
 @st.cache_data  
 def get_data():
     # collect data frame of reviews and their sentiment
-    b2.set_bucket(os.environ['B2_BUCKETNAME'])
-    df = b2.get_df(REMOTE_DATA)
+    # b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    # df = b2.get_df(REMOTE_DATA)
     
     
-    return df
+    # return df
+    bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
+    file_info = bucket.download_file_by_name(REMOTE_DATA)
 
+    # Read the CSV file into a pandas dataframe
+    df = pd.read_csv(file_info.content)
+
+    return df
 
 st.title('National Parks Data')
 
