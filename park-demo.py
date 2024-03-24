@@ -29,12 +29,12 @@ def get_data():
     
     # return df
     bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
-    file_info = bucket.download_file_by_name(REMOTE_DATA)
-
+    file_info = bucket.get_download_url_for_file_name()
+    st.write(file_info)
     # Read the CSV file into a pandas dataframe
-    df = pd.read_csv(file_info)
+    # df = pd.read_csv(file_info)
 
-    return df
+    # return df
 
 st.title('National Parks Data')
 
