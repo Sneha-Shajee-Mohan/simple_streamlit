@@ -19,7 +19,7 @@ load_dotenv()
 #         secret_key=os.environ['B2_APPKEY'])
 b2 = B2Api()
 b2.authorize_account("production",'00502d1b3f7b27a0000000001', 'K005Y3TomdGj2uMCd0q8aU7wmuemNQ4')
-
+st.write(b2)
 @st.cache_data  
 def get_data():
     # collect data frame of reviews and their sentiment
