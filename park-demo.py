@@ -18,7 +18,7 @@ load_dotenv()
 #         key_id=os.environ['B2_KEYID'],
 #         secret_key=os.environ['B2_APPKEY'])
 b2 = B2Api()
-
+st.write(b2)
 b2.authorize_account("production",'00502d1b3f7b27a0000000001', 'K005Y3TomdGj2uMCd0q8aU7wmuemNQ4')
 
 @st.cache_data  
