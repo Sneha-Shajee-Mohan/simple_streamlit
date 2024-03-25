@@ -30,12 +30,12 @@ def get_data():
     # return df
     bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
     file_info = bucket.get_file_info_by_name('NPS.ipynbnational_parks.csv')
-    # st.write(file_info)
+    st.write(file_info)
     # Read the CSV file into a pandas dataframe
-    filepath="https://f005.backblazeb2.com/file/national-park-demo/"+file_info
-    df = pd.read_csv(filepath)
+    
+    # df = pd.read_csv()
 
-    return df
+    # return df
 
 st.title('National Parks Data')
 
