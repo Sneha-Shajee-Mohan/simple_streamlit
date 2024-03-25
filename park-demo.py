@@ -28,7 +28,7 @@ def get_data():
     
     
     # return df
-    bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
+    # bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
     file_info = b2.get_file_info_by_name('national-park-demo')
     # st.write(file_info)
     # Read the CSV file into a pandas dataframe
