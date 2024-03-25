@@ -32,7 +32,8 @@ def get_data():
     file_info = bucket.get_file_info_by_name('NPS.ipynbnational_parks.csv')
     # st.write(file_info)
     # Read the CSV file into a pandas dataframe
-    df = pd.read_csv(file_info)
+    filepath="https://f005.backblazeb2.com/file/national-park-demo/"+file_info
+    df = pd.read_csv(filepath)
 
     return df
 
