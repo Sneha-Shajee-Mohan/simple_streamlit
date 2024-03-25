@@ -29,7 +29,7 @@ def get_data():
     
     # return df
     bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
-    file_info = bucket.download_file_by_name(REMOTE_DATA)
+    file_info = b2.download_file_by_name(REMOTE_DATA)
     # st.write(file_info)
     # Read the CSV file into a pandas dataframe
     df = pd.read_csv(file_info)
