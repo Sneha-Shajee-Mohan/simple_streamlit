@@ -1,9 +1,10 @@
 import mimetypes 
-
+from dotenv import load_dotenv
 import pandas as pd
 import boto3
 from botocore.exceptions import ClientError
 from botocore.config import Config
+load_dotenv()
 
 
 class B2(object):
