@@ -148,4 +148,4 @@ websocket-client==1.7.0
 Werkzeug==3.0.1
 widgetsnbextension==4.0.10
 zipp==3.17.0
-b2sdk>=1.25.0,<2
+b2sdk==1.33.0
