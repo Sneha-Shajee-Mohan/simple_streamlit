@@ -37,7 +37,7 @@ def get_data():
     file_from_B2 = DownloadedFile.save_to(file_down,path,mode='wb+',allow_seeking=True)
     # Read the CSV file into a pandas dataframe
 
-    df = pd.read_csv(file_from_B2)
+    df = pd.read_csv("/Users/sneha/GitHub/simple_streamlit/file_from_B2.csv")
 
     return df
 
