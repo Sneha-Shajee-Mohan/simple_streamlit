@@ -30,7 +30,7 @@ def get_data():
     # return df
     bucket = b2.get_bucket_by_name(os.environ['B2_BUCKETNAME'])
     file_info = bucket.get_file_info_by_name('NPS.ipynbnational_parks.csv')
-    file_down = bucket.download_file_by_id('1711131540363')
+    file_down = bucket.download_file_by_id('4_z10a2ed515be36f778be2071a_f11770dc54974fd9b_d20240322_m181900_c005_v0501005_t0028_u01711131540363')
     # st.write(file_info)
     # Read the CSV file into a pandas dataframe
     
