@@ -5,6 +5,7 @@ from b2sdk.v2 import DownloadedFile
 from dotenv import load_dotenv
 from utils.b2 import B2
 from utils.modeling import *
+import matplotlib.pyplot as plt
 import os
 
 REMOTE_DATA = 'https://f005.backblazeb2.com/file/national-park-demo/NPS.ipynbnational_parks.csv'
@@ -50,10 +51,17 @@ df_parks = get_data()
     # Show distribution of parks by states
 st.subheader('Distribution of Parks by States')
 # Display the dataframe
-st.write(df_parks.sample(10))
+st.write(df_parks.sample(5))
 
    
 state_counts = df_parks['address_stateCode'].value_counts()
-st.bar_chart(state_counts)
+# st.bar_chart(state_counts)
+plt.figure(figsize=(12, 6))
+plt.bar(state_counts.index, state_counts.values)
+plt.xlabel('State')
+plt.ylabel('Number of National Parks')
+plt.title('Distribution of National Parks across Different States')
+plt.xticks(rotation=45, ha='right')
+st.pyplot()
 
 
