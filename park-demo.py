@@ -53,7 +53,7 @@ st.subheader('Distribution of Parks by States')
 st.write(df_parks.sample(10))
 
    
-state_counts = df_parks['states'].value_counts()
+state_counts = df_parks['address_stateCode'].value_counts()
 st.bar_chart(state_counts)
 
 
