@@ -33,8 +33,8 @@ def get_data():
     file_down = bucket.download_file_by_id('4_z10a2ed515be36f778be2071a_f11770dc54974fd9b_d20240322_m181900_c005_v0501005_t0028_u01711131540363')
     # st.write(file_info)
     # Read the CSV file into a pandas dataframe
-    
-    df = pd.read_csv(file_down.content)
+    df = b2.get_df(file_down)
+    # df = pd.read_csv(file_down)
 
     return df
 
