@@ -33,7 +33,8 @@ def get_data():
     # file_info = bucket.get_file_info_by_name('NPS.ipynbnational_parks.csv')
     file_down = bucket.download_file_by_id('4_z10a2ed515be36f778be2071a_f11770dc54974fd9b_d20240322_m181900_c005_v0501005_t0028_u01711131540363')
     # st.write(file_down)
-    file_from_B2 = DownloadedFile.save_to("/Users/sneha/GitHub/simple_streamlit/", mode='wb+', allow_seeking=True)
+    path = "/Users/sneha/GitHub/simple_streamlit/file_from_B2.csv"
+    file_from_B2 = DownloadedFile.save_to(path, mode='wb+', allow_seeking=True)
     # Read the CSV file into a pandas dataframe
 
     df = pd.read_csv(file_from_B2)
