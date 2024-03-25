@@ -11,25 +11,19 @@ REMOTE_DATA = 'NPS.ipynbnational_parks.csv'
 load_dotenv()
 
 
-def fetch_data_from_b2():
-    b2 = B2Api()
+# load Backblaze connection
+b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+        key_id=os.environ['B2_KEYID'],
+        secret_key=os.environ['B2_APPKEY'])
 
-    b2.authorize_account("production",'00502d1b3f7b27a0000000001', 'K005Y3TomdGj2uMCd0q8aU7wmuemNQ4')
-    buckets = b2.list_buckets()
+@st.cache_data
+def get_data():
+    # collect data frame of reviews and their sentiment
+    b2.set_bucket(os.environ['B2_BUCKETNAME'])
+    df = b2.get_df(REMOTE_DATA)
 
-        # Assuming you know the bucket name
-    bucket_name = "national-park-demo"
-
-        # List files within the bucket
-    file_names = b2.list_file_names(bucket_name)
-
-        # Download the CSV file from the bucket
-    for file_name in file_names:
-        if file_name.endswith(".csv"):  # Assuming your file is in CSV format
-            file_info = b2.download_file_by_name(bucket_name, file_name)
-            df = pd.read_csv(file_info.content)
-            return df
-
+    
+    return df
 def main():
     st.title('National Parks Data')
     
