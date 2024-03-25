@@ -50,7 +50,7 @@ df_parks = get_data()
     # Show distribution of parks by states
 st.subheader('Distribution of Parks by States')
 # Display the dataframe
-st.write(df_parks)
+st.write(df_parks.sample(10))
 
    
 state_counts = df_parks['states'].value_counts()
