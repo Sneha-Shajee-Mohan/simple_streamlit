@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from b2sdk.v2 import B2Api
+from b2sdk.v2.DownloadedFile import save_to
 from dotenv import load_dotenv
 from utils.b2 import B2
 from utils.modeling import *
@@ -32,7 +33,7 @@ def get_data():
     # file_info = bucket.get_file_info_by_name('NPS.ipynbnational_parks.csv')
     file_down = bucket.download_file_by_id('4_z10a2ed515be36f778be2071a_f11770dc54974fd9b_d20240322_m181900_c005_v0501005_t0028_u01711131540363')
     # st.write(file_down)
-    file_from_B2 = b2.save_to("/Users/sneha/GitHub/simple_streamlit/", mode='wb+', allow_seeking=True)
+    file_from_B2 = save_to("/Users/sneha/GitHub/simple_streamlit/", mode='wb+', allow_seeking=True)
     # Read the CSV file into a pandas dataframe
 
     df = pd.read_csv(file_from_B2)
