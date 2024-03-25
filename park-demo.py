@@ -62,7 +62,7 @@ plt.bar(state_counts.index, state_counts.values)
 plt.xlabel('State',fontsize=15)
 plt.ylabel('Number of National Parks',fontsize=15)
 plt.title('Distribution of National Parks across Different States',fontsize=15)
-plt.xticks(fontsize=15)
+plt.xticks(fontsize=10)
 st.pyplot()
 
 
